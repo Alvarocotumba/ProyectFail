@@ -1,7 +1,7 @@
-
 package biblioteca;
 
-import java.util.List; 
+import java.util.List;
+import java.util.Scanner;
 
 public class Usuario {
 
@@ -22,13 +22,23 @@ public class Usuario {
         return id;
     }
 
+    public void setId(String id) {
+        this.id = id;
+    }
+
     public String getNombre() {
         return nombre;
+    }
+
+    public void setNombre(String nombre) {
+        this.nombre = nombre;
     }
 
     public int getMaximoPrestamosSimultaneos() {
         return maximoPrestamosSimultaneos;
     }
+
+
 
     public void setMaximoPrestamosSimultaneos(int maximoPrestamosSimultaneos) {
         if (maximoPrestamosSimultaneos < 0) {
