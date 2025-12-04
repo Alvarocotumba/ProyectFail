@@ -1,9 +1,7 @@
-package biblioteca;
-
 import java.util.List;
-import java.util.Scanner;
+import java.util.ArrayList;
 
-public class Usuario {
+public class Biblioteca {
 
   
     private String id;
@@ -11,16 +9,17 @@ public class Usuario {
     private int maximoPrestamosSimultaneos;
     private List<Prestamo> prestamosActivos;
 
-    public Usuario(String id, String nombre) {
+    public Biblioteca(String id, String nombre) {
         this.id = id;
         this.nombre = nombre;
         this.maximoPrestamosSimultaneos = 3;
-        prestamosActivos = null; 
+        prestamosActivos =new ArrayList<>();
     }
 
     public String getId() {
         return id;
     }
+
 
     public void setId(String id) {
         this.id = id;
@@ -38,8 +37,6 @@ public class Usuario {
         return maximoPrestamosSimultaneos;
     }
 
-
-
     public void setMaximoPrestamosSimultaneos(int maximoPrestamosSimultaneos) {
         if (maximoPrestamosSimultaneos < 0) {
             this.maximoPrestamosSimultaneos = 0;
@@ -48,7 +45,8 @@ public class Usuario {
     }
 
     public List<Prestamo> getPrestamosActivos() {
-        return prestamos; // <- nombre de campo incorrecto
+        List<Prestamo> prestamosActivos = List.of();
+        return prestamosActivos; //Cambiado "prestamos" por "prestamosActivos"
     }
 
     
