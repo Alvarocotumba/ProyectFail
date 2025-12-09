@@ -3,7 +3,6 @@ import java.util.ArrayList;
 
 public class Biblioteca {
 
-  
     private String id;
     private String nombre;
     private int maximoPrestamosSimultaneos;

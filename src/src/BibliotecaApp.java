@@ -19,12 +19,11 @@ public class BibliotecaApp {
         int opcion = -1;
         while (opcion != 0) {
             imprimirMenu();
-            // CORREGIDO: Validación de entrada
             if (scanner.hasNextInt()) {
                 opcion = scanner.nextInt();
-                scanner.nextLine(); // Consumir newline
+                scanner.nextLine();
             } else {
-                scanner.nextLine(); // Limpiar entrada inválida
+                scanner.nextLine();
                 opcion = -1;
             }
 
@@ -43,7 +42,7 @@ public class BibliotecaApp {
             }
         }
 
-        scanner.close(); // CORREGIDO: Añadido punto y coma
+        scanner.close();
     }
 
     private void imprimirMenu() {
@@ -67,8 +66,9 @@ public class BibliotecaApp {
         int anio = scanner.nextInt();
         System.out.print("Ejemplares totales: ");
         int totales = scanner.nextInt();
+        scanner.nextLine(); // para consumir el newline pendiente
 
-        Libro libro = new Libro(isbn, titulo, autor, anio, totales); // CORREGIDO: Cambiado "total" por "totales"
+        Libro libro = new Libro(isbn, titulo, autor, anio, totales);
         servicio.registrarLibro(libro);
         System.out.println("Libro registrado: " + libro.getTitulo());
     }
@@ -79,9 +79,11 @@ public class BibliotecaApp {
         System.out.print("Nombre: ");
         String nombre = scanner.nextLine();
 
-        Usuario usuario = new Usuario(id, nombre); // CORREGIDO: Cambiado "idUsuario" por "id"
-        servicio.registrarUsuario(usuario);
-        System.out.println("Usuario registrado: " + usuario.getNombre());
+        //No existe la clase Usuario, debe ser Biblioteca
+        // Usuario usuario = new Usuario(id, nombre); // fue eliminado
+        Biblioteca biblioteca = new Biblioteca(id, nombre); // CORREGIDO
+        servicio.registrarUsuario(biblioteca); // mal: El metodo espera Usuario, no Biblioteca
+        System.out.println("Usuario registrado: " + biblioteca.getNombre());
     }
 
     private void prestarLibroDesdeConsola(Scanner scanner) {

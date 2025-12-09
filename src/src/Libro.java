@@ -1,8 +1,6 @@
-// Archivo: src/biblioteca/Libro.java
 
 public class Libro {
 
-    // Representa un libro físico en la biblioteca
     private String isbn;
     private String titulo;
     private String autor;
@@ -54,7 +52,7 @@ public class Libro {
         }
     }
 
-    public void devolverEjemplar() { // CORREGIDO: Cambiado nombre de "devolver" a "devolverEjemplar" para consistencia
+    public void devolverEjemplar() { //Cambiado nombre de "devolver" a "devolverEjemplar" para consistencia
         if (ejemplaresDisponibles < ejemplaresTotales) {
             ejemplaresDisponibles++;
         }
